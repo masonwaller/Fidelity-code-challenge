@@ -1,0 +1,22 @@
+<form>
+  <div class="form-group">
+    <label for="string">String to be Encoded</label><br />
+    <textarea
+      required
+      ngModel
+      name="str"
+      #str="ngModel"
+      (change)="log(str)"
+      minlength="3"
+      cols="30"
+      rows="10"
+      id="string"
+      type="text"
+      class="form-control"
+    ></textarea>
+    <div class="alert alert-danger" *ngIf="!str.valid">
+      A string is required with a minimum lenght of 3 characters.
+    </div>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>

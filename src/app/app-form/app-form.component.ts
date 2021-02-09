@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app-form.component.html',
   styleUrls: ['./app-form.component.css']
 })
-export class AppForm {}
+export class AppFormComponent {
+  log(x) {
+    console.log(x);
+  }
+}
