@@ -6,7 +6,6 @@
       ngModel
       name="str"
       #str="ngModel"
-      (change)="log(str)"
       minlength="3"
       cols="30"
       rows="10"
@@ -22,6 +21,7 @@
 </form>
 <ul>
   <li *ngFor="let cipher of cipherArray; index as i; first as isFirst">
-    Cipher: {{ cipher.cipher.cipher }}, Original: {{ cipher.cipher.original }}
+    Cipher: {{ cipher.cipher }}, Original: {{ cipher.original }}, Cipher Shift:
+    {{ cipher.number }}
   </li>
 </ul>

@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppFormComponent {
   cipherArray = [];
-  log(x) {
-    console.log(x);
+  ngOnInit() {
+    fetch('http://localhost:3000/caesar')
+      .then(res => res.json())
+      .then(res => (this.cipherArray = res.cipher));
   }
   onSubmit(e: string) {
     const requestOptions = {
@@ -18,6 +20,8 @@ export class AppFormComponent {
     };
     fetch('http://localhost:3000/caesar', requestOptions)
       .then(res => res.json())
-      .then(res => (this.cipherArray = [...this.cipherArray, res]));
+      .then(
+        res => (this.cipherArray = [...this.cipherArray, res.caesarCipher])
+      );
   }
 }
