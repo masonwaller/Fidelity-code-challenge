@@ -1,3 +1,8 @@
+Built this web application to cipher strings that the user can input.  Users can choose how much they want to shift and cipher their strings.  Ciphered strings will appear on the page along with their original string and how much the cipher shifted their letters.  I built this using Angular and TypeScript.  This was my first time using both of these tools and wanted to test my knowledge by building this.  
+
+Backend: https://github.com/masonwaller/fidelity-challenge-backend
+
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
