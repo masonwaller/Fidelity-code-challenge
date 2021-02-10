@@ -12,11 +12,14 @@ export class AppFormComponent {
       .then(res => res.json())
       .then(res => (this.cipherArray = res.cipher));
   }
-  onSubmit(e: string) {
+  onSubmit(str: string, num: number) {
+    if (!str || !num) {
+      return;
+    }
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ original: e })
+      body: JSON.stringify({ original: str, number: num })
     };
     fetch('http://localhost:3000/caesar', requestOptions)
       .then(res => res.json())
