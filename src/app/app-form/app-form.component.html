@@ -1,4 +1,4 @@
-<form (submit)="onSubmit(str.value)">
+<form (submit)="onSubmit(str.value, num.value)">
   <div class="form-group">
     <label for="string">String to be Encoded</label><br />
     <textarea
@@ -15,6 +15,22 @@
     ></textarea>
     <div class="alert alert-danger" *ngIf="!str.valid">
       A string is required with a minimum lenght of 3 characters.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="number">Encoding Number Shift</label><br />
+    <input
+      required
+      ngModel
+      name="num"
+      #num="ngModel"
+      minlength="1"
+      id="number"
+      type="number"
+      class="form-control"
+    />
+    <div class="alert alert-danger" *ngIf="!num.valid">
+      A number is required.
     </div>
   </div>
   <button class="btn btn-primary">Submit</button>
