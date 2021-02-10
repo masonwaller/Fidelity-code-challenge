@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-form.component.css']
 })
 export class AppFormComponent {
+  cipherArray = [];
   log(x) {
     console.log(x);
   }
@@ -17,6 +18,6 @@ export class AppFormComponent {
     };
     fetch('http://localhost:3000/caesar', requestOptions)
       .then(res => res.json())
-      .then(res => console.log(res));
+      .then(res => (this.cipherArray = [...this.cipherArray, res]));
   }
 }
